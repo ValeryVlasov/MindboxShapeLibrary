@@ -11,12 +11,12 @@
 
         public Triangle(double a, double b, double c)
         {
-            if (a <= 0 || b <= 0 || c <= 0)
+            if (a <= 0 + IShape.Eps || b <= 0 + IShape.Eps || c <= 0 + IShape.Eps)
             {
                 throw new ArgumentException("The lengths of the sides must be greater than zero.");
             }
 
-            if (a > (b + c) || b > (c + a) || c > (a + b))
+            if (a - (b + c) > IShape.Eps || b - (a + c) > IShape.Eps || c - (a + b) > IShape.Eps)
             {
                 throw new ArgumentException("No side can be larger than the other two.");
             }
@@ -30,8 +30,8 @@
         private bool getIsRightTriangle()
         {
             Func<double, double, double, bool> PythagoreanTheorem = (leg1, leg2, hypotenuse) =>
-            (Math.Abs(leg1 * leg1 + leg2 * leg2 - hypotenuse * hypotenuse) < IShape.Accuracy);
-            return PythagoreanTheorem(a, b, c) || PythagoreanTheorem(a, c, b) || PythagoreanTheorem(b, c, a);
+            (Math.Abs(Math.Pow(leg1, 2) + Math.Pow(leg2, 2) - Math.Pow(hypotenuse, 2)) < IShape.Accuracy);
+            return PythagoreanTheorem(b, c, a) || PythagoreanTheorem(a, c, b) || PythagoreanTheorem(a, b, c);
         }
 
         public double CalcArea()

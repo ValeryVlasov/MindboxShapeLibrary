@@ -26,13 +26,11 @@ namespace ShapeLibraryTest
             var expected = 25 * Math.PI;
 
             // Act
-            var actual = circle.CalcArea();
+            var actual = circle?.CalcArea();
 
             // Assert
-            //Assert.AreEqual(expected, actual);
-            //Assert.That(Math.Abs(actual - expected), Is.LessThan(eps));
-            Assert.Less(Math.Abs(actual - expected), eps);
-
+            Assert.NotNull(actual);
+            Assert.AreEqual(expected, actual, eps);
         }
     }
 }
