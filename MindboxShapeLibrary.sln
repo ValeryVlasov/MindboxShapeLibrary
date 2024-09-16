@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindboxShapeLibrary", "MindboxShapeLibrary\MindboxShapeLibrary.csproj", "{56A31F14-BBF6-4075-BD57-A38D1080F4AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeLibraryTest", "ShapeLibraryTest\ShapeLibraryTest.csproj", "{BE83E4E1-A6E4-4433-BAD1-EA5AE6DE7FC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{56A31F14-BBF6-4075-BD57-A38D1080F4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A31F14-BBF6-4075-BD57-A38D1080F4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A31F14-BBF6-4075-BD57-A38D1080F4AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE83E4E1-A6E4-4433-BAD1-EA5AE6DE7FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE83E4E1-A6E4-4433-BAD1-EA5AE6DE7FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE83E4E1-A6E4-4433-BAD1-EA5AE6DE7FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE83E4E1-A6E4-4433-BAD1-EA5AE6DE7FC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
