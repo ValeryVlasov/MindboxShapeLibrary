@@ -26,7 +26,7 @@ namespace ShapeLibraryTest
             var expected = 25 * Math.PI;
 
             // Act
-            var actual = circle?.CalcArea();
+            var actual = circle.CalcArea();
 
             // Assert
             Assert.NotNull(actual);

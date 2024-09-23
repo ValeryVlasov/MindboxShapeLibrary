@@ -54,11 +54,11 @@ namespace ShapeLibraryTest
             var triangle = new Triangle(a, b, c);
 
             // Act
-            var actual = triangle?.CalcArea();
+            var actual = triangle.CalcArea();
 
             // Assert
             Assert.NotNull(actual);
-            Assert.Less(Math.Abs(actual.Value - expected), IShape.Accuracy);
+            Assert.Less(Math.Abs(actual - expected), IShape.Accuracy);
         }
 
         [Test]
