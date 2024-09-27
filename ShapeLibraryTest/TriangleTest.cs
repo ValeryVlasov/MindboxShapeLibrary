@@ -4,11 +4,6 @@ namespace ShapeLibraryTest
 {
     public class TriangleTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void TriangleNotNullTest()
         {

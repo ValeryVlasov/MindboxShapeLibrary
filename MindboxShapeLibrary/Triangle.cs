@@ -1,6 +1,6 @@
 ﻿namespace MindboxShapeLibrary
 {
-    public class Triangle : ITriangle
+    public class Triangle : IShape
     {
         public double a { get; }
         public double b { get; }

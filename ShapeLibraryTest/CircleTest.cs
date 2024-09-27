@@ -4,11 +4,6 @@ namespace ShapeLibraryTest
 {
     public class CircleTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void CircleNotNullTest()
         {
