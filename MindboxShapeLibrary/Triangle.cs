@@ -11,7 +11,7 @@
 
         public Triangle(double a, double b, double c)
         {
-            if (a <= 0 + IShape.Eps || b <= 0 + IShape.Eps || c <= 0 + IShape.Eps)
+            if (a <= 0 || b <= 0 || c <= 0)
             {
                 throw new ArgumentException("The lengths of the sides must be greater than zero.");
             }
@@ -29,13 +29,15 @@
         }
         private bool getIsRightTriangle()
         {
+            // Для проверки на прямоугольность используем теорему Пифагора
             Func<double, double, double, bool> PythagoreanTheorem = (leg1, leg2, hypotenuse) =>
-            (Math.Abs(Math.Pow(leg1, 2) + Math.Pow(leg2, 2) - Math.Pow(hypotenuse, 2)) < IShape.Accuracy);
+            (Math.Abs(Math.Pow(leg1, 2) + Math.Pow(leg2, 2) - Math.Pow(hypotenuse, 2)) < IShape.Eps);
             return PythagoreanTheorem(b, c, a) || PythagoreanTheorem(a, c, b) || PythagoreanTheorem(a, b, c);
         }
 
         public double CalcArea()
         {
+            // Вычисляем площадь по формуле Герона
             var semiperimeter = (a + b + c) / 2.0;
             return Math.Sqrt(semiperimeter * (semiperimeter - a) * (semiperimeter - b) * (semiperimeter - c));
         }

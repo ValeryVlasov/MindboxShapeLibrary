@@ -4,11 +4,22 @@ namespace ShapeLibraryTest
 {
     public class CircleTest
     {
-        private const double eps = 1e-7;
-
         [SetUp]
         public void Setup()
         {
+        }
+
+        [Test]
+        public void CircleNotNullTest()
+        {
+            // Arrange
+            double radius = 4.0;
+
+            // Act
+            var circle = new Circle(radius);
+
+            // Assert
+            Assert.NotNull(circle);
         }
 
         [Test]
@@ -18,19 +29,23 @@ namespace ShapeLibraryTest
         public void NegativeRadiusTest() => Assert.Catch<ArgumentException>(() => new Circle(-2));
 
         [Test]
-        public void CalcAreaTest()
+        [TestCase(double.PositiveInfinity)]
+        [TestCase(double.NegativeInfinity)]
+        public void TooLargeRadiusTest(double radius) =>
+            Assert.Catch<ArgumentException>(() => new Circle(radius));
+
+        [Test]
+        public void ResultOfCalcAreaTest()
         {
             // Arrange
-            var radius = 5;
-            var circle = new Circle(radius);
-            var expected = 25 * Math.PI;
+            var circle = new Circle(5);
+            var expected = Math.PI * 5 * 5;
 
             // Act
             var actual = circle.CalcArea();
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.AreEqual(expected, actual, eps);
+            Assert.AreEqual(expected, actual, Constants.Eps);
         }
     }
 }
